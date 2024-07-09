@@ -57,6 +57,8 @@ export class TCData extends Response {
 
   };
 
+  public addtlConsent: string;
+
   /**
    * Constructor to create a TCData object from a TCModel
    * @param {number[]} vendorIds - if not undefined, will be used to filter vendor ids
@@ -115,7 +117,9 @@ export class TCData extends Response {
         },
         restrictions: this.createRestrictions(tcModel.publisherRestrictions),
 
-      };
+      },
+
+      this.addtlConsent = CmpApiModel.addtlConsent;
 
     }
 
